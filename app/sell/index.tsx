@@ -1,13 +1,14 @@
 import React from "react";
-import { Image } from "expo-image";
-import { Pressable, StyleSheet, Text, View, Linking, Alert } from "react-native";
+import {
+    Text
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-//RISHBH
+//RISHABH
 export default function Index() {
-    return ( 
+  return (
     <SafeAreaView>
-
+      <Text style={{ fontSize: 24 }}>Overview</Text>
     </SafeAreaView>
-    );
+  );
 }

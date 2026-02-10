@@ -36,7 +36,7 @@ export default function Index() {
 
       {/* Section Head */}
       <View style={styles.sectionHead}>
-        <Text style={styles.today}>Today's picks</Text>
+        <Text style={styles.today}>Today&apos;s picks</Text>
         <View style={styles.location}>
           <FontAwesome6 name="location-dot" size={15} color="#2459ca" />
           <Text style={styles.calgary}>Calgary, AB</Text>
