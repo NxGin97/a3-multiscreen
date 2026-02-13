@@ -2,8 +2,7 @@ import React from "react";
 import { Image } from "expo-image";
 import { Pressable, StyleSheet, Text, View, Linking, Alert } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-
-// import { ScrollView } from "react-native";
+import { useRouter } from "expo-router";
 
 import Feather from "@expo/vector-icons/Feather";
 import { FontAwesome } from "@expo/vector-icons";
@@ -12,6 +11,8 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 export default function Index() {
+
+  const router = useRouter();
   return (
     <SafeAreaView style={{flex:1  }}>
       {/* Header */}
@@ -27,7 +28,9 @@ export default function Index() {
 
       {/* Tabs */}
       <View style={styles.tabs}>
+        <Pressable onPress={() => router.push("/marketplace/sell")}>
         <Text style={styles.tabItem}>Sell</Text>
+        </Pressable>
         <Text style={[styles.tabItem, styles.tabItemSelected]}>For you</Text>
         <Text style={styles.tabItem}>Local</Text>
         <Text style={styles.tabItem}>Categories</Text>
@@ -47,7 +50,7 @@ export default function Index() {
         <View style={styles.card}>
           <Image
             style={styles.image}
-            source={require("../assets/images/chairs.jpg")}
+            source={require("../../../../assets/images/chairs.jpg")}
             contentFit="cover"
           />
           <Text style={styles.listed}>Just listed</Text>
@@ -60,7 +63,7 @@ export default function Index() {
         <View style={styles.card}>
           <Image
             style={styles.image}
-            source={require("../assets/images/sweater.jpg")}
+            source={require("../../../../assets/images/sweater.jpg")}
             contentFit="cover"
           />
           <Text style={styles.listed}>Just listed</Text>
@@ -71,7 +74,7 @@ export default function Index() {
         <View style={styles.card}>
           <Image
             style={styles.image}
-            source={require("../assets/images/socks.jpg")}
+            source={require("../../../../assets/images/socks.jpg")}
             contentFit="cover"
           />
           <Text style={styles.listed}>Just listed</Text>
@@ -87,7 +90,7 @@ export default function Index() {
         <View style={styles.card}>
           <Image
             style={styles.image}
-            source={require("../assets/images/plant.jpg")}
+            source={require("../../../../assets/images/plant.jpg")}
             contentFit="cover"
           />
           <Text style={styles.listed}>Just listed</Text>
@@ -101,7 +104,7 @@ export default function Index() {
         <View style={styles.card}>
           <Image
             style={styles.image}
-            source={require("../assets/images/blanket.jpg")}
+            source={require("../../../../assets/images/blanket.jpg")}
             contentFit="cover"
           />
           <View style={styles.descContainer}>
@@ -116,7 +119,7 @@ export default function Index() {
         <View style={styles.card}>
           <Image
             style={styles.image}
-            source={require("../assets/images/pinksweater.jpg")}
+            source={require("../../../../assets/images/pinksweater.jpg")}
             contentFit="cover"
           />
           <Text style={styles.description}>$10
@@ -135,16 +138,19 @@ export default function Index() {
           <View style={styles.navSelected}>
             <MaterialCommunityIcons name="storefront-outline" size={28} color="#2b65e0"/>
           </View>
+          <Pressable onPress={() => router.navigate("./group")}>
           <MaterialCommunityIcons name="account-group-outline" size={28} color="black"/>
+          </Pressable>
           <Ionicons name="notifications-outline" size={28} color="black" />
           <View>
             <Image
               style={styles.profilePic}
-              source={require("../assets/images/profilepic.jpg")}
+              source={require("../../../../assets/images/profilepic.jpg")}
               contentFit="cover"
               />
             <Feather name="circle" size={28} color="black" />
           </View>
+
         </View>
         
         {/* Alert button */}
