@@ -1,6 +1,6 @@
 import React from "react";
 import { Image } from "expo-image";
-import { Pressable, StyleSheet, Text, View, Linking, Alert } from "react-native";
+import { Pressable, StyleSheet, Text, View} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useRouter } from "expo-router";
 
@@ -11,10 +11,9 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 export default function Index() {
-
   const router = useRouter();
   return (
-    <SafeAreaView style={{flex:1  }}>
+    <SafeAreaView style={{ flex: 1 }}>
       {/* Header */}
       <View style={styles.headline}>
         <Feather name="menu" size={30} color="black" />
@@ -28,8 +27,8 @@ export default function Index() {
 
       {/* Tabs */}
       <View style={styles.tabs}>
-        <Pressable onPress={() => router.push("/marketplace/sell")}>
-        <Text style={styles.tabItem}>Sell</Text>
+        <Pressable onPress={() => router.push("/(tabs)/marketplace/sell")}>
+          <Text style={styles.tabItem}>Sell</Text>
         </Pressable>
         <Text style={[styles.tabItem, styles.tabItemSelected]}>For you</Text>
         <Text style={styles.tabItem}>Local</Text>
@@ -50,12 +49,12 @@ export default function Index() {
         <View style={styles.card}>
           <Image
             style={styles.image}
-            source={require("../../../../assets/images/chairs.jpg")}
+            source={require("../../../assets/images/chairs.jpg")}
             contentFit="cover"
           />
           <Text style={styles.listed}>Just listed</Text>
           <Text style={[styles.description, styles.descriptionLeft]}>
-            Free 
+            Free
             <Text style={styles.dot}> • </Text>
             Bar stools
           </Text>
@@ -63,26 +62,28 @@ export default function Index() {
         <View style={styles.card}>
           <Image
             style={styles.image}
-            source={require("../../../../assets/images/sweater.jpg")}
+            source={require("../../../assets/images/sweater.jpg")}
             contentFit="cover"
           />
           <Text style={styles.listed}>Just listed</Text>
-          <Text style={styles.description}>$1 
-          <Text style={styles.dot}> • </Text>
-          Closet Cleanout</Text>
+          <Text style={styles.description}>
+            $1
+            <Text style={styles.dot}> • </Text>
+            Closet Cleanout
+          </Text>
         </View>
         <View style={styles.card}>
           <Image
             style={styles.image}
-            source={require("../../../../assets/images/socks.jpg")}
+            source={require("../../../assets/images/socks.jpg")}
             contentFit="cover"
           />
           <Text style={styles.listed}>Just listed</Text>
           <View style={styles.descContainer}>
             <Text style={[styles.description, styles.descriptionLeft]}>
               $10
-            <Text style={styles.dot}> • </Text>
-            Mens socks $10 pe
+              <Text style={styles.dot}> • </Text>
+              Mens socks $10 pe
             </Text>
             <Text style={styles.eclipse}>...</Text>
           </View>
@@ -90,28 +91,15 @@ export default function Index() {
         <View style={styles.card}>
           <Image
             style={styles.image}
-            source={require("../../../../assets/images/plant.jpg")}
+            source={require("../../../assets/images/plant.jpg")}
             contentFit="cover"
           />
           <Text style={styles.listed}>Just listed</Text>
           <View style={styles.descContainer}>
-            <Text style={styles.description}>$10
-            <Text style={styles.dot}> • </Text>
-            Tropical Plants in W </Text>
-            <Text style={styles.eclipse}>...</Text>
-          </View>
-        </View>
-        <View style={styles.card}>
-          <Image
-            style={styles.image}
-            source={require("../../../../assets/images/blanket.jpg")}
-            contentFit="cover"
-          />
-          <View style={styles.descContainer}>
-            <Text style={[styles.description, styles.descriptionLeft]}> $25 
-              <Text style={styles.strike}>$30</Text>
+            <Text style={styles.description}>
+              $10
               <Text style={styles.dot}> • </Text>
-            Oversized plu
+              Tropical Plants in W{" "}
             </Text>
             <Text style={styles.eclipse}>...</Text>
           </View>
@@ -119,27 +107,57 @@ export default function Index() {
         <View style={styles.card}>
           <Image
             style={styles.image}
-            source={require("../../../../assets/images/pinksweater.jpg")}
+            source={require("../../../assets/images/blanket.jpg")}
             contentFit="cover"
           />
-          <Text style={styles.description}>$10
-          <Text style={styles.dot}> • </Text>
-          woman knit</Text>
+          <View style={styles.descContainer}>
+            <Text style={[styles.description, styles.descriptionLeft]}>
+              {" "}
+              $25
+              <Text style={styles.strike}>$30</Text>
+              <Text style={styles.dot}> • </Text>
+              Oversized plu
+            </Text>
+            <Text style={styles.eclipse}>...</Text>
+          </View>
+        </View>
+        <View style={styles.card}>
+          <Image
+            style={styles.image}
+            source={require("../../../assets/images/pinksweater.jpg")}
+            contentFit="cover"
+          />
+          <Text style={styles.description}>
+            $10
+            <Text style={styles.dot}> • </Text>
+            woman knit
+          </Text>
         </View>
       </View>
 
       {/* Nav Bar */}
-      <View style={styles.navWrapper}>
-
+      {/* <View style={styles.navWrapper}>
         <View style={styles.navContainer}>
           <Feather name="home" size={28} color="black" />
-          <FontAwesome style={{ alignItems: "center" }} name="film" size={22} color="black"
-            />
+          <FontAwesome
+            style={{ alignItems: "center" }}
+            name="film"
+            size={22}
+            color="black"
+          />
           <View style={styles.navSelected}>
-            <MaterialCommunityIcons name="storefront-outline" size={28} color="#2b65e0"/>
+            <MaterialCommunityIcons
+              name="storefront-outline"
+              size={28}
+              color="#2b65e0"
+            />
           </View>
           <Pressable onPress={() => router.navigate("./group")}>
-          <MaterialCommunityIcons name="account-group-outline" size={28} color="black"/>
+            <MaterialCommunityIcons
+              name="account-group-outline"
+              size={28}
+              color="black"
+            />
           </Pressable>
           <Ionicons name="notifications-outline" size={28} color="black" />
           <View>
@@ -147,25 +165,27 @@ export default function Index() {
               style={styles.profilePic}
               source={require("../../../../assets/images/profilepic.jpg")}
               contentFit="cover"
-              />
+            />
             <Feather name="circle" size={28} color="black" />
           </View>
+        </View> */}
+        </SafeAreaView>
+);
+}
 
-        </View>
-        
-        {/* Alert button */}
-        <Pressable onPress = {() => {
-          Alert.alert("Alert", "Alert Button Pressed");
-          Linking.openURL("https://youtu.be/2qBlE2-WL60?si=spdu69yFiOaCq5YN");
-        }}>
+        /* Alert button
+        <Pressable
+          onPress={() => {
+            Alert.alert("Alert", "Alert Button Pressed");
+            Linking.openURL("https://youtu.be/2qBlE2-WL60?si=spdu69yFiOaCq5YN");
+          }}
+        >
           <View style={styles.alert}>
             <Text style={styles.alertText}>ALERT</Text>
           </View>
-        </Pressable>
-      </View>
-    </SafeAreaView>
-  );
-}
+        </Pressable> */
+    //   </View>
+    // </SafeAreaView>
 
 const styles = StyleSheet.create({
   icon: {
@@ -183,7 +203,7 @@ const styles = StyleSheet.create({
   },
   iconGap: {
     flexDirection: "row",
-    gap: 15, 
+    gap: 15,
   },
   marketplaceText: {
     fontWeight: 700,
@@ -240,7 +260,7 @@ const styles = StyleSheet.create({
   gridContainer: {
     flexDirection: "row",
     flexWrap: "wrap",
-    justifyContent: "space-between"
+    justifyContent: "space-between",
   },
   card: {
     width: "49.5%",
@@ -325,7 +345,7 @@ const styles = StyleSheet.create({
   profilePic: {
     position: "absolute",
     top: 2,
-    left: 2, 
+    left: 2,
     width: 24,
     height: 24,
     borderColor: "rgba(187, 180, 162, 0.75)",
@@ -335,7 +355,7 @@ const styles = StyleSheet.create({
 
   //--------------------------------------- alert button
   // alert: {
-    
+
   // },
   alert: {
     position: "absolute",
@@ -353,5 +373,4 @@ const styles = StyleSheet.create({
     fontWeight: 700,
     paddingHorizontal: 5,
   },
-
 });

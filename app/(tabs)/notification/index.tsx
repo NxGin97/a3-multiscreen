@@ -6,11 +6,12 @@ import { useRouter } from "expo-router";
 
 //RISHABH
 export default function Index() {
+  const router = useRouter();
+
   return (
     <SafeAreaView>
       <View>
-      <Text> This is group page</Text>
-      <Text style={{ fontSize: 24 }}>Overview</Text>
+      <Text> This is notification page</Text>
       </View>
       
     </SafeAreaView>
