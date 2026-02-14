@@ -13,7 +13,7 @@ export default function Index() {
       <View>
       <Text> This is sell page</Text>
     <Pressable onPress={() => {router.back();}}>
-      
+      <Text style={{fontSize: 28}}> &lt; </Text>
     </Pressable>
       <Text style={{ fontSize: 24 }}>Overview</Text>
       </View>

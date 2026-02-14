@@ -5,10 +5,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { useRouter } from "expo-router";
 
 import Feather from "@expo/vector-icons/Feather";
-import { FontAwesome } from "@expo/vector-icons";
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 export default function Index() {
   const router = useRouter();
@@ -134,58 +132,9 @@ export default function Index() {
           </Text>
         </View>
       </View>
-
-      {/* Nav Bar */}
-      {/* <View style={styles.navWrapper}>
-        <View style={styles.navContainer}>
-          <Feather name="home" size={28} color="black" />
-          <FontAwesome
-            style={{ alignItems: "center" }}
-            name="film"
-            size={22}
-            color="black"
-          />
-          <View style={styles.navSelected}>
-            <MaterialCommunityIcons
-              name="storefront-outline"
-              size={28}
-              color="#2b65e0"
-            />
-          </View>
-          <Pressable onPress={() => router.navigate("./group")}>
-            <MaterialCommunityIcons
-              name="account-group-outline"
-              size={28}
-              color="black"
-            />
-          </Pressable>
-          <Ionicons name="notifications-outline" size={28} color="black" />
-          <View>
-            <Image
-              style={styles.profilePic}
-              source={require("../../../../assets/images/profilepic.jpg")}
-              contentFit="cover"
-            />
-            <Feather name="circle" size={28} color="black" />
-          </View>
-        </View> */}
-        </SafeAreaView>
+    </SafeAreaView>
 );
 }
-
-        /* Alert button
-        <Pressable
-          onPress={() => {
-            Alert.alert("Alert", "Alert Button Pressed");
-            Linking.openURL("https://youtu.be/2qBlE2-WL60?si=spdu69yFiOaCq5YN");
-          }}
-        >
-          <View style={styles.alert}>
-            <Text style={styles.alertText}>ALERT</Text>
-          </View>
-        </Pressable> */
-    //   </View>
-    // </SafeAreaView>
 
 const styles = StyleSheet.create({
   icon: {
@@ -313,64 +262,5 @@ const styles = StyleSheet.create({
     marginTop: 9,
     fontSize: 14,
     fontWeight: 700,
-  },
-
-  // ----------------navigation bar
-  navWrapper: {
-    position: "absolute",
-    bottom: 22,
-    left: 12,
-    width: "94%",
-  },
-  navContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-around",
-    height: 50,
-    backgroundColor: "white",
-    borderRadius: 40,
-    borderWidth: 1,
-    borderColor: "rgba(000,000,000, 0.1)",
-  },
-
-  navSelected: {
-    width: 50,
-    padding: 5,
-    backgroundColor: "rgba(183, 212, 238, 0.4)",
-    borderRadius: 20,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-
-  profilePic: {
-    position: "absolute",
-    top: 2,
-    left: 2,
-    width: 24,
-    height: 24,
-    borderColor: "rgba(187, 180, 162, 0.75)",
-    borderWidth: 0.5,
-    borderRadius: 50,
-  },
-
-  //--------------------------------------- alert button
-  // alert: {
-
-  // },
-  alert: {
-    position: "absolute",
-    right: 10,
-    bottom: 55,
-    paddingHorizontal: 10,
-    paddingVertical: 4,
-    borderRadius: 50,
-    backgroundColor: "rgba(224,003,003,0.95)",
-    zIndex: 10,
-  },
-
-  alertText: {
-    color: "white",
-    fontWeight: 700,
-    paddingHorizontal: 5,
   },
 });
