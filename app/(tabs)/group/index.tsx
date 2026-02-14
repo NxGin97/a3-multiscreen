@@ -18,9 +18,12 @@ import { LinearGradient } from "expo-linear-gradient";
 export default function Index() {
   return (
     <SafeAreaView style={{ flex: 1 }}>
-            {/* Header */}
+      
+      {/* Header */}
       <View style={styles.headline}>
-        <Feather name="menu" size={30} color="black" />
+        <View>
+          <Feather name="menu" size={30} color="black" />
+        </View>
         <Text style={styles.groupText}>Groups</Text>
         <View style={styles.iconGap}>
           <FontAwesome6 name="facebook-messenger" size={24} color="black" />
@@ -41,19 +44,21 @@ export default function Index() {
       {/* Section Head */}
       <View style={styles.sectionHead}>
         <Text style={styles.group}>Your groups</Text>
-          <Text style={styles.see}>See all</Text>
+        <Text style={styles.see}>See all</Text>
       </View>
 
       <View style={styles.sectionContainer}>
-          <View style={styles.groupContainer}>
-            <Image
-              style={styles.groupIcon}
-              source={require("../../../assets/images/yycplant.jpg")}
-              contentFit="cover"/>
+        <View style={styles.groupContainer}>
+          <Image
+            style={styles.groupIcon}
+            source={require("../../../assets/images/yycplant.jpg")}
+            contentFit="cover"/>
             <View style={{flexDirection: "column"}}>
               <Text style={styles.groupTitle}> YYC Planty community 🌱 buy/trade/sell {"\n"} 🌱</Text>
               <View style={{flexDirection: "row"}}>
-                <Octicons name="dot-fill" size={17} color="#2b65e0" style={{marginTop: 3}}/>
+                <View>
+                  <Octicons name="dot-fill" size={17} color="#2b65e0" style={{marginTop: 3}}/>
+                </View>
                 <Text style={styles.post}> 5 new posts</Text>
               </View>
             </View>
@@ -64,39 +69,43 @@ export default function Index() {
               color="#7e7e7e"/>
             </View>
           </View>
-          
 
-          <View style={styles.groupContainer}>
-            <Image
-              style={styles.groupIcon}
-              source={require("../../../assets/images/internationalpfp.jpg")}
-              contentFit="cover"/>
+        <View style={styles.groupContainer}>
+          <Image
+            style={styles.groupIcon}
+            source={require("../../../assets/images/internationalpfp.jpg")}
+            contentFit="cover"/>
             <View style={{flexDirection: "column"}}>
-            <Text style={styles.groupTitle}> International Sansevieria Society</Text>
+              <Text style={styles.groupTitle}> International Sansevieria Society</Text>
             <View style={{flexDirection: "row"}}>
-              <Octicons name="dot-fill" size={17} color="#2b65e0" style={{marginTop: 3}}/>
+              <View>
+                <Octicons name="dot-fill" size={17} color="#2b65e0" style={{marginTop: 3}}/>
+              </View>
               <Text style={styles.post}> 6 new posts</Text>
             </View>
-            </View>
-            <View style={styles.pinIcon}>
+          </View>
+          <View style={styles.pinIcon}>
             <Octicons
               name="pin"
               size={20}
               color="#7e7e7e"/>
-            </View>
-
           </View>
-          <View style={styles.groupContainer}>
-            <Image
-              style={styles.groupIcon}
-              source={require("../../../assets/images/sagehill.jpg")}
-              contentFit="cover"/>
+        </View>
+
+
+        <View style={styles.groupContainer}>
+          <Image
+            style={styles.groupIcon}
+            source={require("../../../assets/images/sagehill.jpg")}
+            contentFit="cover"/>
             <View style={{flexDirection: "column"}}>
-            <Text style={styles.groupTitle}> Sage Hill Chat</Text>
-            <View style={{flexDirection: "row"}}>
-              <Octicons name="dot-fill" size={17} color="#2b65e0" style={{marginTop: 3}} />
-              <Text style={styles.post}> 18 new posts</Text>
-            </View>
+              <Text style={styles.groupTitle}> Sage Hill Chat</Text>
+              <View style={{flexDirection: "row"}}>
+                <View>
+                  <Octicons name="dot-fill" size={17} color="#2b65e0" style={{marginTop: 3}}/>
+                </View>
+                <Text style={styles.post}> 18 new posts</Text>
+              </View>
             </View>
             <View style={styles.pinIcon}>
               <Octicons
@@ -106,8 +115,7 @@ export default function Index() {
               />
             </View>
           </View>
-      </View>
-
+        </View>
 
       <View style={{borderBottomWidth: 0.8, borderColor: "rgba(0, 0, 0, 0.7)", marginVertical: 10}}> </View>
 
@@ -119,27 +127,28 @@ export default function Index() {
       {/* Section*/}
       <View style={styles.groupContainer}>
         <Image
-              style={styles.imageIcon}
-              source={require("../../../assets/images/internationalpfp.jpg")}
-              contentFit="cover"/>
+          style={styles.imageIcon}
+          source={require("../../../assets/images/internationalpfp.jpg")}
+          contentFit="cover"/>
         <Image
-              style={styles.profile}
-              source={require("../../../assets/images/dogprofile.jpg")}
-              contentFit="cover"/>
-
+          style={styles.profile}
+          source={require("../../../assets/images/dogprofile.jpg")}
+          contentFit="cover"/>
         <View style={{flexDirection: "column"}}>
           <Text style={styles.groupName}>International Sansevieria Society</Text>
+
           <View style={{flexDirection: "row", alignItems: "center", gap: 4}}>
             <Text style={[styles.profileName, {fontWeight: "600"}]}>Geoff Stein</Text>
             <Text style={[styles.profileName, {fontWeight: "400"}]}>• 3d •</Text>
             <FontAwesome5 name="user-friends" size={11} color="rgba(0,0,0,0.5)" />
           </View>
         </View>
-        <View style={styles.twoIcons}>
+
+      <View style={styles.twoIcons}>
         <Entypo name="dots-three-horizontal" size={20} color="rgba(0, 0, 0, 0.6)" style={{marginTop: 2}} />
         <Feather name="x" size={26} color="rgba(0, 0, 0, 0.6)" />
-        </View>
       </View>
+    </View>
       <View>
         <Text style={styles.contentHeader}>Two recent acquisitions but no ID... anyone know? </Text>
       </View>
@@ -154,16 +163,18 @@ export default function Index() {
               contentFit="cover"/>
       </View>
       
-      <LinearGradient
-      colors={["transparent", "rgba(255, 255, 255, 0.9)"]}
-      style={{
-        position: "absolute",
-        bottom: 0,
-        left: 0,
-        right: 0,
-        height: 60,
-      }}
-      pointerEvents="none"/>
+      <View>
+        <LinearGradient
+        colors={["transparent", "rgba(255, 255, 255, 0.9)"]}
+        style={{
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          right: 0,
+          height: 60,
+        }}
+        pointerEvents="none"/>
+      </View>
 
     </SafeAreaView>
   );
@@ -181,7 +192,7 @@ export default function Index() {
     alignItems: "baseline",
     gap: 10,
     marginLeft: 10,
-    marginBottom: 14,
+    marginBottom: 15,
   },
   iconGap: {
     flexDirection: "row",

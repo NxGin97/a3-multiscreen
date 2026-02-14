@@ -134,6 +134,8 @@ export default function Index() {
         </View>
       </View>
 
+      <View>
+
       <LinearGradient
       colors={["transparent", "rgba(255, 255, 255, 0.9)"]}
       style={{
@@ -144,6 +146,7 @@ export default function Index() {
         height: 60,
       }}
       pointerEvents="none"/>
+      </View>
     </SafeAreaView>
 );
 }
