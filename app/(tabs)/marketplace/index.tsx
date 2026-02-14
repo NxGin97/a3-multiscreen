@@ -7,6 +7,7 @@ import { useRouter } from "expo-router";
 import Feather from "@expo/vector-icons/Feather";
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import { LinearGradient } from "expo-linear-gradient";
 
 export default function Index() {
   const router = useRouter();
@@ -132,6 +133,17 @@ export default function Index() {
           </Text>
         </View>
       </View>
+
+      <LinearGradient
+      colors={["transparent", "rgba(255, 255, 255, 0.9)"]}
+      style={{
+        position: "absolute",
+        bottom: 0,
+        left: 0,
+        right: 0,
+        height: 60,
+      }}
+      pointerEvents="none"/>
     </SafeAreaView>
 );
 }
@@ -160,7 +172,7 @@ const styles = StyleSheet.create({
     marginRight: 45,
   },
 
-  //--------------------------navigation tabs
+  //--------------------------tag tabs
   tabs: {
     flexDirection: "row",
     gap: 5,
