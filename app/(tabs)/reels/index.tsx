@@ -8,9 +8,9 @@ export default function Index() {
   const router = useRouter();
 
   return (
-    <SafeAreaView>
-      <View>
-        <Text> This is reels page</Text>
+    <SafeAreaView style={{ flex: 1 }}>
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+        <Text> This is the reels page</Text>
       </View>
     </SafeAreaView>
   );

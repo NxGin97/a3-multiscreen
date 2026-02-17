@@ -1,8 +1,8 @@
-import React from "react";
 import { Image } from "expo-image";
-import { Pressable, StyleSheet, Text, View} from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 import { useRouter } from "expo-router";
+import React from "react";
+import { Pressable, StyleSheet, Text, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 import Feather from "@expo/vector-icons/Feather";
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
@@ -36,7 +36,7 @@ export default function Index() {
 
       {/* Section Head */}
       <View style={styles.sectionHead}>
-        <Text style={styles.today}>Today&apos;s picks</Text>
+        <Text style={styles.today}>Today's picks</Text>
         <View style={styles.location}>
           <FontAwesome6 name="location-dot" size={15} color="#2459ca" />
           <Text style={styles.calgary}>Calgary, AB</Text>
@@ -98,7 +98,7 @@ export default function Index() {
             <Text style={styles.description}>
               $10
               <Text style={styles.dot}> • </Text>
-              Tropical Plants in W{" "}
+              Tropical Plants in W
             </Text>
             <Text style={styles.eclipse}>...</Text>
           </View>
@@ -111,7 +111,6 @@ export default function Index() {
           />
           <View style={styles.descContainer}>
             <Text style={[styles.description, styles.descriptionLeft]}>
-              {" "}
               $25
               <Text style={styles.strike}>$30</Text>
               <Text style={styles.dot}> • </Text>
@@ -135,20 +134,20 @@ export default function Index() {
       </View>
 
       <View>
-
-      <LinearGradient
-      colors={["transparent", "rgba(255, 255, 255, 0.9)"]}
-      style={{
-        position: "absolute",
-        bottom: 0,
-        left: 0,
-        right: 0,
-        height: 60,
-      }}
-      pointerEvents="none"/>
+        <LinearGradient
+          colors={["transparent", "rgba(255, 255, 255, 0.9)"]}
+          style={{
+            position: "absolute",
+            bottom: 0,
+            left: 0,
+            right: 0,
+            height: 60,
+          }}
+          pointerEvents="none"
+        />
       </View>
     </SafeAreaView>
-);
+  );
 }
 
 const styles = StyleSheet.create({
@@ -170,7 +169,7 @@ const styles = StyleSheet.create({
     gap: 15,
   },
   marketplaceText: {
-    fontWeight: 700,
+    fontWeight: "700",
     fontSize: 30,
     marginRight: 45,
   },
@@ -185,7 +184,7 @@ const styles = StyleSheet.create({
   tabItem: {
     paddingVertical: 9,
     paddingHorizontal: 11.5,
-    fontWeight: 600,
+    fontWeight: "600",
     fontSize: 15,
   },
   tabItemSelected: {
@@ -212,7 +211,7 @@ const styles = StyleSheet.create({
 
   today: {
     fontSize: 17,
-    fontWeight: 700,
+    fontWeight: "700",
   },
 
   calgary: {
@@ -237,7 +236,7 @@ const styles = StyleSheet.create({
     top: 12,
     left: 10,
     fontSize: 12,
-    fontWeight: 400,
+    fontWeight: "400",
     paddingTop: 1,
     paddingBottom: 2,
     paddingHorizontal: 4,
@@ -258,7 +257,7 @@ const styles = StyleSheet.create({
   description: {
     marginVertical: 9,
     fontSize: 15,
-    fontWeight: 500,
+    fontWeight: "500",
   },
   dot: {
     fontSize: 11,
@@ -276,6 +275,6 @@ const styles = StyleSheet.create({
   eclipse: {
     marginTop: 9,
     fontSize: 14,
-    fontWeight: 700,
+    fontWeight: "700",
   },
 });
