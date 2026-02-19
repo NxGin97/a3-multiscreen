@@ -3,8 +3,6 @@ import { ScrollView, StyleSheet , Text, View, Image } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Link } from "expo-router";
 import {
-  EvilIcons,
-
   Feather,
   FontAwesome,
   Ionicons,
