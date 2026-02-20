@@ -1,4 +1,5 @@
 import {
+  Entypo,
   Feather,
   FontAwesome,
   FontAwesome5,
@@ -7,18 +8,12 @@ import {
   MaterialCommunityIcons,
   MaterialIcons,
   Octicons,
-  Entypo
 } from "@expo/vector-icons";
-import React from "react";
-import { Image } from "expo-image"
-import { SafeAreaView } from "react-native-safe-area-context";
-import {
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { Image } from "expo-image";
 import { LinearGradient } from "expo-linear-gradient";
+import React from "react";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Profile() {
   const items = [
@@ -29,170 +24,229 @@ export default function Profile() {
       icon: "cake-variant-outline",
       text: "January 10",
     },
-    { iconLib: MaterialCommunityIcons, icon: "circle-multiple-outline", text: "Female" },
+    {
+      iconLib: MaterialCommunityIcons,
+      icon: "circle-multiple-outline",
+      text: "Female",
+    },
   ];
   return (
-    <View style={{flex: 1}}>
+    <View style={{ flex: 1 }}>
       <Image
-          source={require("../../../assets/images/coverphotopfp.jpg")}
-          style={styles.coverPhoto}
-        />
+        source={require("../../../assets/images/coverphotopfp.jpg")}
+        style={styles.coverPhoto}
+      />
       <View style={styles.header}>
-              <View>
-                <Feather name="menu" size={24} color="white" />
-              </View>
-              <View style={styles.iconGap}>
-                <MaterialCommunityIcons name="pencil-outline" size={26} color="white" />
-                <MaterialCommunityIcons name="dots-horizontal" size={26} color="white" />
-                <Ionicons name="search-outline" size={26} color="white" />
-              </View>
-              <FontAwesome name="camera" size={24} color="white" style={{position: "absolute", top: 60, left: 350, zIndex: 1000}} />
-            </View>
-    <SafeAreaView style={styles.container}>
-
-      {/* Card */}
-      <View style={{flexDirection: "row"}}>
-
-          <View style={{width: 30, height: 30, borderRadius: 50, borderWidth: 1.5, borderColor: "rgb(255, 255, 255)", backgroundColor: "#cacaca", zIndex: 16, position: "absolute", top: -10, left: 80,}}>
-            <FontAwesome name= "camera" size={15} color="black" style={styles.profile} />
-          </View>
-          <View style={{height: 110, backgroundColor: "#f2f2f2", width: "100%", borderTopStartRadius: 20, borderTopEndRadius: 20, zIndex: 1, alignItems: "center", marginVertical: -60}}>
-        <Image
-            source={require("../../../assets/images/profilepic.jpg")}
-            style={[styles.avatar, {position: "absolute", bottom: 30, left: 10, zIndex: 2}]}
+        <View>
+          <Feather name="menu" size={24} color="white" />
+        </View>
+        <View style={styles.iconGap}>
+          <MaterialCommunityIcons
+            name="pencil-outline"
+            size={26}
+            color="white"
+          />
+          <MaterialCommunityIcons
+            name="dots-horizontal"
+            size={26}
+            color="white"
+          />
+          <Ionicons name="search-outline" size={26} color="white" />
+        </View>
+        <FontAwesome
+          name="camera"
+          size={24}
+          color="white"
+          style={styles.cameraIcon}
         />
+      </View>
+      <SafeAreaView style={styles.container}>
+        {/* Card */}
+        <View style={{ flexDirection: "row" }}>
+          <View style={styles.cameraContainer}>
+            <FontAwesome
+              name="camera"
+              size={15}
+              color="black"
+              style={styles.profile}
+            />
+          </View>
+          <View style={styles.profilePic}>
+            <Image
+              source={require("../../../assets/images/profilepic.jpg")}
+              style={styles.avatar}
+            />
             <Text style={styles.userName}>Natalie Ngo</Text>
 
-            <View style={{flexDirection: "row", marginRight: 10}}> 
-            <Text style={[styles.normalText, {marginLeft: 14}]}>55 
-              <Text style={styles.lightText}> friends </Text> • 
+            <View style={styles.textContainer}>
+              <Text style={[styles.normalText, { marginLeft: 14 }]}>
+                55
+                <Text style={styles.lightText}> friends </Text> •
               </Text>
-            <Text style={styles.normalText}>  825 
-              <Text style={styles.lightText}> posts </Text>
+              <Text style={styles.normalText}>
+                {" "}
+                825
+                <Text style={styles.lightText}> posts </Text>
               </Text>
             </View>
-        <View style={{backgroundColor: "#d6d6d6", borderRadius: 100, width: 35, height: 35, zIndex: 4, position: "absolute", right: 20, top: 15,}}>
-            <FontAwesome5 name="chevron-down" size={18} color="black" style={{postion: "absolute", top: 9, left: 10, zIndex: 4}}/>
-        </View>
-          
-      </View>
-      </View>
-
-      <View style={{flex: 1, paddingHorizontal: 16}}>
-        {/* MISC under bio */}
-        <Text style={styles.bio}>✨ okay ✨</Text>
-
-        <View
-          style={{
-            marginTop: 10,
-            flexDirection: "row",
-            alignItems: "center",
-          }}
-        >
-          <View style={styles.miscBio}>
-            <FontAwesome name="map-marker" size={16} color="black" />
-            <Text style={styles.miscBioText}>Calgary, AB •</Text>
-          </View>
-
-          <View style={styles.miscBio}>
-            <MaterialIcons name="home-work" size={16} color="black" />
-            <Text style={styles.miscBioText}> EB Games •</Text>
-          </View>
-
-          <View style={styles.miscBio}>
-            <FontAwesome6 name="school-flag" size={16} color="black" />
-            <Text style={styles.miscBioText}>Captain Nichola </Text>
+            <View style={styles.arrowContainer}>
+              <FontAwesome5
+                name="chevron-down"
+                size={18}
+                color="black"
+                style={styles.arrowIcon}
+              />
+            </View>
           </View>
         </View>
 
-        <View style={styles.miscBio}>
-              <Text style={[styles.miscBioText, {marginLeft: -2}]}> Goddard (C.N.G)</Text>
-        </View >
+        <View style={{ flex: 1, paddingHorizontal: 16 }}>
+          {/* MISC under bio */}
+          <Text style={styles.bio}>✨ okay ✨</Text>
 
-        {/* The three profile pictures */}
-        <View style={{flexDirection: "row", alignItems: "center", marginTop: 7, marginBottom: 15}}>
-        <Image
-            source={require("../../../assets/images/pfp1.jpg")}
-            style={[styles.pfp, {zIndex: 3}]}
+          <View
+            style={{
+              marginTop: 10,
+              flexDirection: "row",
+              alignItems: "center",
+            }}
+          >
+            <View style={styles.miscBio}>
+              <FontAwesome name="map-marker" size={16} color="black" />
+              <Text style={styles.miscBioText}>Calgary, AB •</Text>
+            </View>
+
+            <View style={styles.miscBio}>
+              <MaterialIcons name="home-work" size={16} color="black" />
+              <Text style={styles.miscBioText}> EB Games •</Text>
+            </View>
+
+            <View style={styles.miscBio}>
+              <FontAwesome6 name="school-flag" size={16} color="black" />
+              <Text style={styles.miscBioText}>Captain Nichola </Text>
+            </View>
+          </View>
+
+          <View style={styles.miscBio}>
+            <Text style={[styles.miscBioText, { marginLeft: -2 }]}>Goddard (C.N.G)</Text>
+          </View>
+
+          {/* The three profile pictures */}
+          <View style={styles.friendsContainer}>
+            <Image
+              source={require("../../../assets/images/pfp1.jpg")}
+              style={[styles.pfp, styles.pfp1]}
             />
-          <Image
-            source={require("../../../assets/images/pfp2.jpg")}
-            style={[styles.pfp, {position: "absolute", zIndex: 3, left: 30}]}
+            <Image
+              source={require("../../../assets/images/pfp2.jpg")}
+              style={[styles.pfp, styles.pfp2]}
             />
-              <Entypo name="dots-three-horizontal" size={15} color="white" style={{ position: "absolute", left: 70, top: 16, zIndex: 10}} />
-            <View style={{width: 32, height: 32, backgroundColor: "rgba(8, 8, 8, 0.5)", opacity: 0.5, borderRadius: 100, zIndex: 2, position: "absolute", left: 60}}/>
-          <Image
-            source={require("../../../assets/images/pfp3.jpg")}
-            style={[styles.pfp, {position: "absolute", zIndex: 1, left: 60}]}
+            <Entypo
+              name="dots-three-horizontal"
+              size={15}
+              color="white"
+              style={styles.pfp3}
             />
-            <Text style={{marginLeft: 60,  color: "#666666", fontSize: 13, fontWeight: "500"}}> Friends with things in common</Text>
-        </View>
+            <View style={styles.pfpCover} />
+            <Image
+              source={require("../../../assets/images/pfp3.jpg")}
+              style={[styles.pfp, styles.pfp4]}
+            />
+            <Text style={styles.friendsText}>
+              {" "}
+              Friends with things in common{" "}
+            </Text>
+          </View>
 
-        {/* Add Story + Edit Profile */}
-        <View style={styles.buttonRow}>
-          <TouchableOpacity style={styles.storyButton}>
-            <Text style={styles.storyButtonText}> + Add to Story</Text>
-          </TouchableOpacity>
+          {/* Add Story + Edit Profile */}
+          <View style={styles.buttonRow}>
+            <TouchableOpacity style={styles.storyButton}>
+              <Text style={styles.storyButtonText}> + Add to Story</Text>
+            </TouchableOpacity>
 
-          <TouchableOpacity style={styles.editButton}>
-            <MaterialCommunityIcons name="pencil" size={20} color="black" />
-            <Text style={styles.editButtonText}> Edit profile</Text>
-          </TouchableOpacity>
-        </View>
+            <TouchableOpacity style={styles.editButton}>
+              <MaterialCommunityIcons name="pencil" size={20} color="black" />
+              <Text style={styles.editButtonText}> Edit profile</Text>
+            </TouchableOpacity>
+          </View>
 
-        {/* Profile tabs */}
-        <View style={styles.tabs}>
-          <Text style={[styles.tabItem, styles.tabItemSelected]}>All</Text>
-          <Text style={styles.tabItem}>Photos</Text>
-          <Text style={styles.tabItem}>Reels</Text>
-        </View>
+          {/* Profile tabs */}
+          <View style={styles.tabs}>
+            <Text style={[styles.tabItem, styles.tabItemSelected]}>All</Text>
+            <Text style={styles.tabItem}>Photos</Text>
+            <Text style={styles.tabItem}>Reels</Text>
+          </View>
 
-        {/* Personal Details */}
-        <View style={styles.headline}>
-          <Text style={styles.headlineText}>Personal details</Text>
-          <Octicons name="pencil" size={18} color="grey" style={{marginTop: 20,}} />
-        </View>
+          {/* Personal Details */}
+          <View style={styles.headline}>
+            <Text style={styles.headlineText}>Personal details</Text>
+            <Octicons
+              name="pencil"
+              size={18}
+              color="grey"
+              style={{ marginTop: 20 }}
+            />
+          </View>
 
-        <View>
           <View>
-            {items.map((item, index) => {
-              const IconComponent = item.iconLib;
-              return (
-                <View key={index} style={styles.infoRow}>
-                  <IconComponent
-                    name={item.icon as any}
-                    size={22}
-                    color={"#555"}
-                    style={{marginLeft: 4}}
-                  />
-                  <Text style={[styles.infoText,item.text === "Female" && { fontWeight: "400" }]}>
-                    {item.text}
-                  </Text>
-                </View>
-              );
-            })}
+            <View>
+              {items.map((item, index) => {
+                const IconComponent = item.iconLib;
+                return (
+                  <View key={index} style={styles.infoRow}>
+                    <IconComponent
+                      name={item.icon as any}
+                      size={22}
+                      color={"#555"}
+                      style={{ marginLeft: 4 }}
+                    />
+                    <Text
+                      style={[
+                        styles.infoText,
+                        item.text === "Female" && { fontWeight: "400" },
+                      ]}
+                    >
+                      {item.text}
+                    </Text>
+                  </View>
+                );
+              })}
+            </View>
+          </View>
+
+          <View style={styles.headline}>
+            <Text style={styles.headlineText}>Work</Text>
+            <Octicons
+              name="pencil"
+              size={18}
+              color="grey"
+              style={{ marginTop: 20 }}
+            />
+          </View>
+
+          <View style={{ flexDirection: "row", alignItems: "center" }}>
+            <View style={styles.gamesIcon}>
+              <MaterialIcons
+                name="home-work"
+                size={23}
+                color="#707070"
+                style={{ marginTop: 8, marginLeft: 8 }}
+              />
+            </View>
+            <Text style={styles.workText}>EB Games</Text>
+          </View>
+
+          <View style={styles.headline}>
+            <Text style={styles.headlineText}>Education</Text>
+            <Octicons
+              name="pencil"
+              size={18}
+              color="grey"
+              style={{ marginTop: 20 }}
+            />
           </View>
         </View>
-
-        <View style={styles.headline}>
-          <Text style={styles.headlineText}>Work</Text>
-          <Octicons name="pencil" size={18} color="grey" style={{marginTop: 20,}} />
-        </View>
-
-        <View style={{flexDirection: "row", alignItems: "center"}}>
-          <View style={{backgroundColor: "#d3d3d3", width: 40, height: 40, borderRadius: 10, marginTop: 17}}>
-            <MaterialIcons name="home-work" size={23} color="#707070" style={{marginTop: 8, marginLeft: 8,}}/>
-          </View>
-          <Text style={{marginTop: 15, marginLeft: 10, fontWeight: "500"}}> EB Games </Text>
-        </View>
-            
-        <View style={styles.headline}>
-          <Text style={styles.headlineText}>Education</Text>
-          <Octicons name="pencil" size={18} color="grey" style={{marginTop: 20,}} />
-        </View>
-
-      </View>
-    <LinearGradient
+        <LinearGradient
           colors={["transparent", "rgba(255, 255, 255, 0.9)"]}
           style={{
             position: "absolute",
@@ -203,7 +257,7 @@ export default function Profile() {
           }}
           pointerEvents="none"
         />
-    </SafeAreaView>
+      </SafeAreaView>
     </View>
   );
 }
@@ -211,7 +265,7 @@ export default function Profile() {
 const styles = StyleSheet.create({
   container: { flex: 1 },
 
-    //--------------------------------header
+  //--------------------------------header
   header: {
     position: "absolute",
     top: 50,
@@ -233,27 +287,42 @@ const styles = StyleSheet.create({
     fontSize: 30,
     marginRight: 113,
   },
-
+  profilePic: {
+    height: 110,
+    backgroundColor: "#f2f2f2",
+    width: "100%",
+    borderTopStartRadius: 20,
+    borderTopEndRadius: 20,
+    zIndex: 1,
+    alignItems: "center",
+    marginVertical: -60,
+  },
   coverPhoto: {
     width: "100%",
     height: "19%",
   },
   userName: {
-  fontWeight: "700", 
-  fontSize: 21, 
-  marginTop: 15, 
-  marginBottom: 10, 
-  marginRight: 29,
+    fontWeight: "700",
+    fontSize: 21,
+    marginTop: 15,
+    marginBottom: 10,
+    marginRight: 29,
+  },
+
+  textContainer: {
+    flexDirection: "row",
+    marginRight: 10,
   },
 
   lightText: {
-    fontWeight: "400", 
-    color: "#6e6e6e"
+    fontWeight: "400",
+    color: "#6e6e6e",
   },
+
   normalText: {
     fontSize: 13,
-    fontWeight: "700", 
-    textAlign: "center", 
+    fontWeight: "700",
+    textAlign: "center",
   },
   headline: {
     flexDirection: "row",
@@ -266,7 +335,7 @@ const styles = StyleSheet.create({
     fontWeight: "700",
   },
 
-    profile: {
+  profile: {
     width: 17,
     height: 17,
     position: "absolute",
@@ -274,14 +343,74 @@ const styles = StyleSheet.create({
     top: 6,
   },
 
+  friendsContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginTop: 7,
+    marginBottom: 15,
+  },
   pfp: {
-    marginVertical: 6, 
+    marginVertical: 6,
     width: 36,
     height: 36,
     borderColor: "white",
     borderWidth: 2,
     borderRadius: 100,
+  },
 
+  pfp1: {
+    zIndex: 3,
+  },
+
+  pfp2: {
+    position: "absolute",
+    zIndex: 3,
+    left: 30,
+  },
+
+  pfp3: {
+    position: "absolute",
+    left: 70,
+    top: 16,
+    zIndex: 10,
+  },
+
+  pfp4: {
+    position: "absolute",
+    zIndex: 1,
+    left: 60,
+  },
+
+  pfpCover: {
+    width: 32,
+    height: 32,
+    backgroundColor: "rgba(8, 8, 8, 0.7)",
+    opacity: 0.5,
+    borderRadius: 100,
+    zIndex: 2,
+    position: "absolute",
+    left: 60,
+  },
+
+  friendsText: {
+    marginLeft: 60,
+    color: "#666666",
+    fontSize: 13,
+    fontWeight: "500",
+  },
+
+  gamesIcon: {
+    backgroundColor: "#d3d3d3",
+    width: 40,
+    height: 40,
+    borderRadius: 10,
+    marginTop: 17,
+  },
+
+  workText: {
+    marginTop: 15,
+    marginLeft: 12,
+    fontWeight: "500",
   },
 
   avatar: {
@@ -290,10 +419,10 @@ const styles = StyleSheet.create({
     borderRadius: 55,
     borderWidth: 3,
     borderColor: "white",
-    position: "absolute", 
-    bottom: 20, 
-    left: 10, 
-    zIndex: 2
+    position: "absolute",
+    bottom: 20,
+    left: 10,
+    zIndex: 2,
   },
   name: {
     marginTop: -60,
@@ -311,13 +440,30 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     marginHorizontal: 3,
-
   },
 
-  miscBioText: { 
-    marginLeft: 7, 
-    fontWeight: "600" ,
+  miscBioText: {
+    marginLeft: 7,
+    fontWeight: "600",
     fontSize: 13,
+  },
+
+  arrowContainer: {
+    backgroundColor: "#d6d6d6",
+    borderRadius: 100,
+    width: 35,
+    height: 35,
+    zIndex: 4,
+    position: "absolute",
+    right: 20,
+    top: 15,
+  },
+
+  arrowIcon: {
+    position: "absolute",
+    top: 9,
+    left: 10,
+    zIndex: 4,
   },
   // Personal Detail + icons
   infoRow: {
@@ -325,13 +471,30 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingTop: 16,
     marginVertical: 2,
-
   },
 
   infoText: {
     fontSize: 15,
     fontWeight: "600",
     marginLeft: 20,
+  },
+  cameraIcon: {
+    position: "absolute",
+    top: 60,
+    left: 350,
+    zIndex: 1000,
+  },
+  cameraContainer: {
+    width: 30,
+    height: 30,
+    borderRadius: 50,
+    borderWidth: 1.5,
+    borderColor: "rgb(255, 255, 255)",
+    backgroundColor: "#cacaca",
+    zIndex: 16,
+    position: "absolute",
+    top: -10,
+    left: 80,
   },
 
   // From the market place tabs sheet Credit: Natalie NGo
@@ -357,13 +520,12 @@ const styles = StyleSheet.create({
   // For Buttons
   buttonRow: {
     flexDirection: "row",
-
   },
   storyButton: {
     flex: 1,
     marginHorizontal: 3,
     height: 35,
-    backgroundColor:  "#185beb",
+    backgroundColor: "#185beb",
     borderRadius: 10,
     alignItems: "center",
     justifyContent: "center",
@@ -372,7 +534,6 @@ const styles = StyleSheet.create({
   storyButtonText: {
     color: "#f2f2f2",
     fontWeight: "600",
-
   },
   editButton: {
     flexDirection: "row",
@@ -391,7 +552,7 @@ const styles = StyleSheet.create({
     marginLeft: 6,
   },
 
-   //---------------grouping style
+  //---------------grouping style
 
   sectionContainer: {
     flexDirection: "column",
@@ -422,8 +583,6 @@ const styles = StyleSheet.create({
     marginRight: 1,
   },
 
-
-
   pinIcon: {
     marginLeft: "auto",
     marginRight: 13,
@@ -452,5 +611,4 @@ const styles = StyleSheet.create({
     lineHeight: 22,
     color: "rgba(0, 0, 0, 0.7)",
   },
-
 });
