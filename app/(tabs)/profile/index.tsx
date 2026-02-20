@@ -7,81 +7,91 @@ import {
   MaterialCommunityIcons,
   MaterialIcons,
   Octicons,
-  SimpleLineIcons,
+  Entypo
 } from "@expo/vector-icons";
 import React from "react";
+import { Image } from "expo-image"
+import { SafeAreaView } from "react-native-safe-area-context";
 import {
-  Image,
-  ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
 } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 
 export default function Profile() {
   const items = [
     { iconLib: Feather, icon: "map-pin", text: "Calgary, Alberta" },
-    { iconLib: Ionicons, icon: "home-outline", text: "Calgary,Alberta" },
+    { iconLib: Ionicons, icon: "home-outline", text: "Calgary, Alberta" },
     {
       iconLib: MaterialCommunityIcons,
       icon: "cake-variant-outline",
-      text: "January,10",
+      text: "January 10",
     },
-    { iconLib: SimpleLineIcons, icon: "user-female", text: "Female" },
+    { iconLib: MaterialCommunityIcons, icon: "circle-multiple-outline", text: "Female" },
   ];
   return (
-    <ScrollView style={styles.container}>
-      <View>
-        <Image
+    <View style={{flex: 1}}>
+      <Image
           source={require("../../../assets/images/coverphotopfp.jpg")}
           style={styles.coverPhoto}
         />
-      </View>
+      <View style={styles.header}>
+              <View>
+                <Feather name="menu" size={24} color="white" />
+              </View>
+              <View style={styles.iconGap}>
+                <MaterialCommunityIcons name="pencil-outline" size={26} color="white" />
+                <MaterialCommunityIcons name="dots-horizontal" size={26} color="white" />
+                <Ionicons name="search-outline" size={26} color="white" />
+              </View>
+              <FontAwesome name="camera" size={24} color="white" style={{position: "absolute", top: 60, left: 350, zIndex: 1000}} />
+            </View>
+    <SafeAreaView style={styles.container}>
 
       {/* Card */}
-      <View style={styles.card}>
-        {/* Avatar pic */}
-        <View style={styles.avatarContainer}>
-          <Image
+      <View style={{flexDirection: "row"}}>
+
+          <View style={{width: 30, height: 30, borderRadius: 50, borderWidth: 1.5, borderColor: "rgb(255, 255, 255)", backgroundColor: "#cacaca", zIndex: 16, position: "absolute", top: -10, left: 80,}}>
+            <FontAwesome name= "camera" size={15} color="black" style={styles.profile} />
+          </View>
+          <View style={{height: 110, backgroundColor: "#f2f2f2", width: "100%", borderTopStartRadius: 20, borderTopEndRadius: 20, zIndex: 1, alignItems: "center", marginVertical: -60}}>
+        <Image
             source={require("../../../assets/images/profilepic.jpg")}
-            style={styles.avatar}
-          />
+            style={[styles.avatar, {position: "absolute", bottom: 30, left: 10, zIndex: 2}]}
+        />
+            <Text style={styles.userName}>Natalie Ngo</Text>
+
+            <View style={{flexDirection: "row", marginRight: 10}}> 
+            <Text style={[styles.normalText, {marginLeft: 14}]}>55 
+              <Text style={styles.lightText}> friends </Text> • 
+              </Text>
+            <Text style={styles.normalText}>  825 
+              <Text style={styles.lightText}> posts </Text>
+              </Text>
+            </View>
+        <View style={{backgroundColor: "#d6d6d6", borderRadius: 100, width: 35, height: 35, zIndex: 4, position: "absolute", right: 20, top: 15,}}>
+            <FontAwesome5 name="chevron-down" size={18} color="black" style={{postion: "absolute", top: 9, left: 10, zIndex: 4}}/>
         </View>
+          
+      </View>
+      </View>
 
-        {/* Name & bio */}
-        <View
-          style={{
-            flexDirection: "row",
-            justifyContent: "space-between",
-            marginLeft: 125,
-            alignItems: "center",
-            marginTop: -30,
-            marginBottom: -15,
-          }}
-        >
-          <Text style={styles.name}>Natalie Ngo</Text>
-          <FontAwesome5 name="chevron-circle-down" size={24} color="grey" />
-        </View>
-
-        <Text style={{ fontWeight: "500", textAlign: "center" }}>
-          55 friends • 825 posts
-        </Text>
-        <Text style={styles.bio}>✨ okay ✨</Text>
-
+      <View style={{flex: 1, paddingHorizontal: 16}}>
         {/* MISC under bio */}
+        <Text style={styles.bio}>✨ okay ✨</Text>
 
         <View
           style={{
             marginTop: 10,
             flexDirection: "row",
-            flexWrap: "wrap",
             alignItems: "center",
           }}
         >
           <View style={styles.miscBio}>
             <FontAwesome name="map-marker" size={16} color="black" />
-            <Text style={styles.miscBioText}>Calgary, Alberta •</Text>
+            <Text style={styles.miscBioText}>Calgary, AB •</Text>
           </View>
 
           <View style={styles.miscBio}>
@@ -91,21 +101,42 @@ export default function Profile() {
 
           <View style={styles.miscBio}>
             <FontAwesome6 name="school-flag" size={16} color="black" />
-            <Text style={styles.miscBioText}>
-              Captain Nichola Goddard (C.N.G)
-            </Text>
+            <Text style={styles.miscBioText}>Captain Nichola </Text>
           </View>
+        </View>
+
+        <View style={styles.miscBio}>
+              <Text style={[styles.miscBioText, {marginLeft: -2}]}> Goddard (C.N.G)</Text>
+        </View >
+
+        {/* The three profile pictures */}
+        <View style={{flexDirection: "row", alignItems: "center", marginTop: 7, marginBottom: 15}}>
+        <Image
+            source={require("../../../assets/images/pfp1.jpg")}
+            style={[styles.pfp, {zIndex: 3}]}
+            />
+          <Image
+            source={require("../../../assets/images/pfp2.jpg")}
+            style={[styles.pfp, {position: "absolute", zIndex: 3, left: 30}]}
+            />
+              <Entypo name="dots-three-horizontal" size={15} color="white" style={{ position: "absolute", left: 70, top: 16, zIndex: 10}} />
+            <View style={{width: 32, height: 32, backgroundColor: "rgba(8, 8, 8, 0.5)", opacity: 0.5, borderRadius: 100, zIndex: 2, position: "absolute", left: 60}}/>
+          <Image
+            source={require("../../../assets/images/pfp3.jpg")}
+            style={[styles.pfp, {position: "absolute", zIndex: 1, left: 60}]}
+            />
+            <Text style={{marginLeft: 60,  color: "#666666", fontSize: 13, fontWeight: "500"}}> Friends with things in common</Text>
         </View>
 
         {/* Add Story + Edit Profile */}
         <View style={styles.buttonRow}>
           <TouchableOpacity style={styles.storyButton}>
-            <Text style={styles.storyButtonText}>+ Add To Story</Text>
+            <Text style={styles.storyButtonText}> + Add to Story</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.editButton}>
             <MaterialCommunityIcons name="pencil" size={20} color="black" />
-            <Text style={styles.editButtonText}> Edit Profile</Text>
+            <Text style={styles.editButtonText}> Edit profile</Text>
           </TouchableOpacity>
         </View>
 
@@ -117,27 +148,12 @@ export default function Profile() {
         </View>
 
         {/* Personal Details */}
-        <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "space-between",
-          }}
-        >
-          <Text
-            style={{
-              marginTop: 8,
-              fontSize: 18,
-              fontWeight: "bold",
-              textAlign: "left",
-            }}
-          >
-            Personal Details
-          </Text>
-          <Octicons name="pencil" size={18} color="grey" />
+        <View style={styles.headline}>
+          <Text style={styles.headlineText}>Personal details</Text>
+          <Octicons name="pencil" size={18} color="grey" style={{marginTop: 20,}} />
         </View>
 
-        <View style={styles.info}>
+        <View>
           <View>
             {items.map((item, index) => {
               const IconComponent = item.iconLib;
@@ -145,105 +161,190 @@ export default function Profile() {
                 <View key={index} style={styles.infoRow}>
                   <IconComponent
                     name={item.icon as any}
-                    size={18}
+                    size={22}
                     color={"#555"}
+                    style={{marginLeft: 4}}
                   />
-                  <Text style={styles.infoText}>{item.text}</Text>
+                  <Text style={[styles.infoText,item.text === "Female" && { fontWeight: "400" }]}>
+                    {item.text}
+                  </Text>
                 </View>
               );
             })}
           </View>
         </View>
 
-        <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "space-between",
-          }}
-        >
-          <Text style={{ fontWeight: "bold", fontSize: 18, marginTop: 20 }}>
-            Work
-          </Text>
-          <Octicons name="pencil" size={18} color="grey" />
-          <Text>EB Games</Text>
+        <View style={styles.headline}>
+          <Text style={styles.headlineText}>Work</Text>
+          <Octicons name="pencil" size={18} color="grey" style={{marginTop: 20,}} />
         </View>
+
+        <View style={{flexDirection: "row", alignItems: "center"}}>
+          <View style={{backgroundColor: "#d3d3d3", width: 40, height: 40, borderRadius: 10, marginTop: 17}}>
+            <MaterialIcons name="home-work" size={23} color="#707070" style={{marginTop: 8, marginLeft: 8,}}/>
+          </View>
+          <Text style={{marginTop: 15, marginLeft: 10, fontWeight: "500"}}> EB Games </Text>
+        </View>
+            
+        <View style={styles.headline}>
+          <Text style={styles.headlineText}>Education</Text>
+          <Octicons name="pencil" size={18} color="grey" style={{marginTop: 20,}} />
+        </View>
+
       </View>
-    </ScrollView>
+    <LinearGradient
+          colors={["transparent", "rgba(255, 255, 255, 0.9)"]}
+          style={{
+            position: "absolute",
+            bottom: 0,
+            left: 0,
+            right: 0,
+            height: 60,
+          }}
+          pointerEvents="none"
+        />
+    </SafeAreaView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: "#f2f2f2" },
+  container: { flex: 1 },
+
+    //--------------------------------header
+  header: {
+    position: "absolute",
+    top: 50,
+    left: 0,
+    right: 0,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    paddingHorizontal: 16,
+    paddingTop: 10,
+    zIndex: 100,
+  },
+  iconGap: {
+    flexDirection: "row",
+    gap: 15,
+  },
+  groupText: {
+    fontWeight: "700",
+    fontSize: 30,
+    marginRight: 113,
+  },
 
   coverPhoto: {
     width: "100%",
-    height: 300,
+    height: "19%",
   },
-  card: {
-    backgroundColor: "white",
-    padding: 16,
-    marginTop: -5,
-    borderTopLeftRadius: 16,
-    borderTopRightRadius: 16,
+  userName: {
+  fontWeight: "700", 
+  fontSize: 21, 
+  marginTop: 15, 
+  marginBottom: 10, 
+  marginRight: 29,
   },
-  avatarContainer: {
-    marginTop: -50,
-    alignItems: "flex-start",
+
+  lightText: {
+    fontWeight: "400", 
+    color: "#6e6e6e"
   },
+  normalText: {
+    fontSize: 13,
+    fontWeight: "700", 
+    textAlign: "center", 
+  },
+  headline: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  headlineText: {
+    marginTop: 20,
+    fontSize: 18,
+    fontWeight: "700",
+  },
+
+    profile: {
+    width: 17,
+    height: 17,
+    position: "absolute",
+    left: 6,
+    top: 6,
+  },
+
+  pfp: {
+    marginVertical: 6, 
+    width: 36,
+    height: 36,
+    borderColor: "white",
+    borderWidth: 2,
+    borderRadius: 100,
+
+  },
+
   avatar: {
-    width: 110,
-    height: 110,
+    width: 100,
+    height: 100,
     borderRadius: 55,
     borderWidth: 3,
+    borderColor: "white",
+    position: "absolute", 
+    bottom: 20, 
+    left: 10, 
+    zIndex: 2
   },
   name: {
-    marginTop: -50,
+    marginTop: -60,
     fontSize: 22,
     fontWeight: "bold",
     textAlign: "center",
   },
   bio: {
+    marginTop: 30,
     fontSize: 16,
-    textAlign: "left",
-    marginBottom: 12,
+    zIndex: 2,
   },
 
   miscBio: {
     flexDirection: "row",
     alignItems: "center",
-    flexWrap: "wrap",
-  },
-  miscBioText: { marginLeft: 6, fontWeight: "500" },
+    marginHorizontal: 3,
 
-  // Personal Detail + icons
-  info: {
-    marginTop: 10,
-    gap: 12,
-    flexDirection: "row",
   },
+
+  miscBioText: { 
+    marginLeft: 7, 
+    fontWeight: "600" ,
+    fontSize: 13,
+  },
+  // Personal Detail + icons
   infoRow: {
     flexDirection: "row",
     alignItems: "center",
-    paddingTop: 20,
+    paddingTop: 16,
+    marginVertical: 2,
+
   },
 
   infoText: {
     fontSize: 15,
-    fontWeight: "500",
+    fontWeight: "600",
+    marginLeft: 20,
   },
 
   // From the market place tabs sheet Credit: Natalie NGo
   tabs: {
     flexDirection: "row",
-    gap: 5,
-    marginLeft: 6,
+    gap: 10,
     borderRadius: 3,
     justifyContent: "flex-start",
+    marginTop: 20,
   },
   tabItem: {
     paddingVertical: 9,
-    paddingHorizontal: 11.5,
+    paddingHorizontal: 13.5,
     fontWeight: 600,
     fontSize: 15,
   },
@@ -256,15 +357,14 @@ const styles = StyleSheet.create({
   // For Buttons
   buttonRow: {
     flexDirection: "row",
-    justifyContent: "space-between",
-    margin: 10,
+
   },
   storyButton: {
     flex: 1,
-    height: 42,
-    backgroundColor: "#1877F2",
+    marginHorizontal: 3,
+    height: 35,
+    backgroundColor:  "#185beb",
     borderRadius: 10,
-    marginRight: 10,
     alignItems: "center",
     justifyContent: "center",
   },
@@ -272,12 +372,14 @@ const styles = StyleSheet.create({
   storyButtonText: {
     color: "#f2f2f2",
     fontWeight: "600",
+
   },
   editButton: {
     flexDirection: "row",
     flex: 1,
-    height: 42,
-    backgroundColor: "#E4E6EB",
+    marginHorizontal: 3,
+    height: 35,
+    backgroundColor: "#c9c9c9",
     borderRadius: 10,
     alignItems: "center",
     justifyContent: "center",
@@ -288,4 +390,67 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     marginLeft: 6,
   },
+
+   //---------------grouping style
+
+  sectionContainer: {
+    flexDirection: "column",
+    gap: 15,
+  },
+
+  groupContainer: {
+    flexDirection: "row",
+    gap: 10,
+  },
+
+  groupIcon: {
+    width: "10.5%",
+    aspectRatio: 1,
+    borderColor: "rgba(133, 133, 133, 0.5)",
+    borderWidth: 1,
+    borderRadius: 8,
+    marginLeft: 13,
+  },
+
+  imageIcon: {
+    width: "9.5%",
+    aspectRatio: 1,
+    borderColor: "rgba(133, 133, 133, 0.8)",
+    borderWidth: 1,
+    borderRadius: 8,
+    marginLeft: 13,
+    marginRight: 1,
+  },
+
+
+
+  pinIcon: {
+    marginLeft: "auto",
+    marginRight: 13,
+    marginTop: 10,
+  },
+
+  groupTitle: {
+    fontWeight: "500",
+    fontSize: 14,
+  },
+
+  post: {
+    color: "#4e4e4e",
+    fontSize: 12,
+    marginTop: 4,
+  },
+
+  groupName: {
+    fontWeight: "600",
+    fontSize: 15,
+    marginTop: 2,
+  },
+
+  profileName: {
+    fontSize: 12,
+    lineHeight: 22,
+    color: "rgba(0, 0, 0, 0.7)",
+  },
+
 });
