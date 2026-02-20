@@ -163,6 +163,9 @@ export default function Index() {
           <Text style={{ color: "#757575" }}>Last 7 days</Text>
         </View>
       </View>
+      <View style={styles.flexRow}>
+        <Text style={[styles.overview, { marginTop: 10 }]}>Listing ideas</Text>
+      </View>
 
       <LinearGradient
                 colors={["transparent", "rgba(255, 255, 255, 0.9)"]}
@@ -244,6 +247,7 @@ buttonText: {
   },
 
   overview: {
+    marginTop: 2,
     fontSize: 21,
     fontWeight: 700,
   },
@@ -274,8 +278,8 @@ buttonText: {
     alignItems: "flex-start",
     verticalAlign: "middle",
     paddingHorizontal: 10,
-    paddingTop: 5,
-    paddingBottom: 16,
+    paddingTop: 6,
+    paddingBottom: 18,
   },
   statsCard2: {
     flex: 1,
@@ -288,8 +292,8 @@ buttonText: {
     alignItems: "flex-start",
     verticalAlign: "middle",
     paddingHorizontal: 10,
-    paddingTop: 4,
-    paddingBottom: 10,
+    paddingTop: 5,
+    paddingBottom: 12,
   },
 
   subHeading: {
