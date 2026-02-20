@@ -1,14 +1,16 @@
-import React from "react";
 import { Image } from "expo-image";
-import { Pressable, StyleSheet, Text, View} from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 import { useRouter } from "expo-router";
+import React from "react";
+import { Pressable, StyleSheet, Text, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 import Feather from "@expo/vector-icons/Feather";
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { LinearGradient } from "expo-linear-gradient";
 
+// Debug log
+console.log("MARKETPLACE LOADED");
 export default function Index() {
   const router = useRouter();
   return (
@@ -135,20 +137,20 @@ export default function Index() {
       </View>
 
       <View>
-
-      <LinearGradient
-      colors={["transparent", "rgba(255, 255, 255, 0.9)"]}
-      style={{
-        position: "absolute",
-        bottom: 0,
-        left: 0,
-        right: 0,
-        height: 60,
-      }}
-      pointerEvents="none"/>
+        <LinearGradient
+          colors={["transparent", "rgba(255, 255, 255, 0.9)"]}
+          style={{
+            position: "absolute",
+            bottom: 0,
+            left: 0,
+            right: 0,
+            height: 60,
+          }}
+          pointerEvents="none"
+        />
       </View>
     </SafeAreaView>
-);
+  );
 }
 
 const styles = StyleSheet.create({
