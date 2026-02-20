@@ -1,9 +1,15 @@
-import React from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { StyleSheet, Text, View } from "react-native";
 import { Image } from "expo-image";
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
-import { Octicons, Entypo, Feather, FontAwesome5, Ionicons } from "@expo/vector-icons";
+import {
+  Entypo,
+  Feather,
+  FontAwesome5,
+  Ionicons,
+  Octicons,
+} from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
 
 //NATALIE

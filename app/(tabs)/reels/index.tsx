@@ -1,7 +1,9 @@
 import { useRouter } from "expo-router";
 import React from "react";
-import { Pressable, Text, View } from "react-native";
+import { Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+
+console.log("REEL TAB LOADED");
 
 //RISHABH
 export default function Index() {

@@ -1,206 +1,212 @@
-import { Tabs } from "expo-router";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { Tabs } from "expo-router";
 import { Image, View } from "react-native";
 
-import Feather from "@expo/vector-icons/Feather";
 import { FontAwesome } from "@expo/vector-icons";
+import Feather from "@expo/vector-icons/Feather";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
+console.log("TABS LAYOUT LOADED");
 
 export default function TabLayout() {
-    
-    return (
+  return (
     <Tabs
-        screenOptions={{
+      screenOptions={{
         headerShown: false,
         tabBarShowLabel: false,
 
         tabBarStyle: {
-            position: "absolute",
-            bottom: 22,
-            marginHorizontal: 10,
-            height: 50,
-            backgroundColor: "white",
-            borderRadius: 40,
-            paddingTop: 4,
-            borderWidth: 1,
-            borderColor: "rgba(0,0,0,0.1)",
+          position: "absolute",
+          bottom: 22,
+          marginHorizontal: 10,
+          height: 50,
+          backgroundColor: "white",
+          borderRadius: 40,
+          paddingTop: 4,
+          borderWidth: 1,
+          borderColor: "rgba(0,0,0,0.1)",
         },
 
         tabBarItemStyle: {
-            justifyContent: "center",
-            alignItems: "center",
+          justifyContent: "center",
+          alignItems: "center",
         },
 
         tabBarActiveTintColor: "#185beb",
         tabBarInactiveTintColor: "black",
-        }}
+      }}
     >
-        {/* Home */}
-        <Tabs.Screen
+      {/* Home */}
+      <Tabs.Screen
         name="home/index"
         options={{
-            tabBarIcon: ({ color, focused }) => (
+          tabBarIcon: ({ color, focused }) => (
             <View
-                style={{
+              style={{
                 width: 55,
                 height: 40,
                 marginTop: 3,
                 backgroundColor: focused
-                    ? "rgba(183, 212, 238, 0.4)"
-                    : "transparent",
+                  ? "rgba(183, 212, 238, 0.4)"
+                  : "transparent",
                 borderRadius: 40,
                 justifyContent: "center",
                 alignItems: "center",
-                }}
+              }}
             >
-                <Feather name="home" size={28} color={color} />
+              <Feather name="home" size={28} color={color} />
             </View>
-            ),
+          ),
         }}
-        />
+      />
 
-        {/* Reels */}
-        <Tabs.Screen
+      {/* Reels */}
+      <Tabs.Screen
         name="reels/index"
         options={{
-            tabBarIcon: ({ color, focused }) => (
+          tabBarIcon: ({ color, focused }) => (
             <View
-                style={{
+              style={{
                 width: 55,
                 height: 40,
                 marginTop: 3,
                 backgroundColor: focused
-                    ? "rgba(183, 212, 238, 0.4)"
-                    : "transparent",
+                  ? "rgba(183, 212, 238, 0.4)"
+                  : "transparent",
                 borderRadius: 20,
                 justifyContent: "center",
                 alignItems: "center",
-                }}
+              }}
             >
-                <FontAwesome
-            style={{ alignItems: "center" }}
-            name="film"
-            size={22}
-            color={color}/>
+              <FontAwesome
+                style={{ alignItems: "center" }}
+                name="film"
+                size={22}
+                color={color}
+              />
             </View>
-            ),
+          ),
         }}
-        />
+      />
 
       {/* Marketplace */}
-        <Tabs.Screen
+      <Tabs.Screen
         name="marketplace"
         options={{
-            tabBarIcon: ({ color, focused }) => (
+          tabBarIcon: ({ color, focused }) => (
             <View
-                style={{
+              style={{
                 width: 55,
                 height: 40,
                 marginTop: 3,
                 backgroundColor: focused
-                    ? "rgba(183, 212, 238, 0.4)"
-                    : "transparent",
+                  ? "rgba(183, 212, 238, 0.4)"
+                  : "transparent",
                 borderRadius: 20,
                 justifyContent: "center",
                 alignItems: "center",
-                }}
+              }}
             >
-                <MaterialCommunityIcons
+              <MaterialCommunityIcons
                 name="storefront-outline"
                 size={28}
                 color={color}
-                />
+              />
             </View>
-            ),
+          ),
         }}
-        />
+      />
 
       {/* Group */}
-        <Tabs.Screen
+      <Tabs.Screen
         name="group/index"
         options={{
-            tabBarIcon: ({ color, focused }) => (
+          tabBarIcon: ({ color, focused }) => (
             <View
-                style={{
+              style={{
                 width: 55,
                 height: 40,
                 marginTop: 3,
                 backgroundColor: focused
-                    ? "rgba(183, 212, 238, 0.4)"
-                    : "transparent",
+                  ? "rgba(183, 212, 238, 0.4)"
+                  : "transparent",
                 borderRadius: 20,
                 justifyContent: "center",
                 alignItems: "center",
-                }}
+              }}
             >
-                <MaterialCommunityIcons
+              <MaterialCommunityIcons
                 name="account-group-outline"
                 size={28}
                 color={color}
-                />
+              />
             </View>
-            ),
+          ),
         }}
-        />
+      />
 
-        {/* Notification */}
-        <Tabs.Screen
+      {/* Notification */}
+      <Tabs.Screen
         name="notification/index"
         options={{
-            tabBarIcon: ({ color, focused }) => (
+          tabBarIcon: ({ color, focused }) => (
             <View
-                style={{
+              style={{
                 width: 55,
                 height: 40,
                 marginTop: 3,
                 backgroundColor: focused
-                    ? "rgba(183, 212, 238, 0.4)"
-                    : "transparent",
+                  ? "rgba(183, 212, 238, 0.4)"
+                  : "transparent",
                 borderRadius: 20,
                 justifyContent: "center",
                 alignItems: "center",
-                }}
+              }}
             >
-                <Ionicons name="notifications-outline" size={28} color={color} />
+              <Ionicons name="notifications-outline" size={28} color={color} />
             </View>
-            ),
+          ),
         }}
-        />
+      />
 
       {/* Profile */}
-        <Tabs.Screen
+      <Tabs.Screen
         name="profile/index"
         options={{
-            tabBarIcon: ({ color, focused }) => (
+          tabBarIcon: ({ color, focused }) => (
             <View
-                style={{
+              style={{
                 width: 55,
                 height: 40,
                 marginTop: 3,
                 backgroundColor: focused
-                    ? "rgba(183, 212, 238, 0.4)"
-                    : "transparent",
+                  ? "rgba(183, 212, 238, 0.4)"
+                  : "transparent",
                 borderRadius: 20,
                 justifyContent: "center",
                 alignItems: "center",
-                }}
+              }}
             >
-                <Feather name="circle" size={30} color={color} style={{position: "absolute", zIndex: 5}} />
-                <Image
+              <Feather
+                name="circle"
+                size={30}
+                color={color}
+                style={{ position: "absolute", zIndex: 5 }}
+              />
+              <Image
                 source={require("../../assets/images/profilepic.jpg")}
                 style={{
-                    width: 28,
-                    height: 28,
-                    borderRadius: 50,
-                    borderWidth: 0.5,
-                    borderColor: "rgba(187, 180, 162, 0.75)",
+                  width: 28,
+                  height: 28,
+                  borderRadius: 50,
+                  borderWidth: 0.5,
+                  borderColor: "rgba(187, 180, 162, 0.75)",
                 }}
-                />
+              />
             </View>
-            ),
+          ),
         }}
-        />
+      />
     </Tabs>
-    );
+  );
 }

@@ -9,6 +9,8 @@ import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { LinearGradient } from "expo-linear-gradient";
 
+// Debug log
+console.log("MARKETPLACE LOADED");
 export default function Index() {
   const router = useRouter();
   return (
