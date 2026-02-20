@@ -189,7 +189,7 @@ const styles = StyleSheet.create({
   },
   tabItemSelected: {
     backgroundColor: "rgba(183, 212, 238, 0.4)",
-    color: "#2b65e0",
+    color: "#185beb",
     borderRadius: 18,
   },
 
@@ -216,7 +216,7 @@ const styles = StyleSheet.create({
 
   calgary: {
     fontSize: 15,
-    color: "#2b65e0",
+    color: "#185beb",
   },
 
   //---------------------------------grid + cards
