@@ -32,7 +32,7 @@ export default function TabLayout() {
           alignItems: "center",
         },
 
-        tabBarActiveTintColor: "#2b65e0",
+        tabBarActiveTintColor: "#185beb",
         tabBarInactiveTintColor: "black",
       }}
     >

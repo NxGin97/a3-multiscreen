@@ -3,17 +3,16 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-import { Octicons } from "@expo/vector-icons";
-import Entypo from "@expo/vector-icons/Entypo";
-import Feather from "@expo/vector-icons/Feather";
-import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
-import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
-import Ionicons from "@expo/vector-icons/Ionicons";
+import {
+  Entypo,
+  Feather,
+  FontAwesome5,
+  Ionicons,
+  Octicons,
+} from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
 
-console.log("GROUP TAB LOADED");
-
-//RISHABH
+//NATALIE
 export default function Index() {
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -24,7 +23,7 @@ export default function Index() {
         </View>
         <Text style={styles.groupText}>Groups</Text>
         <View style={styles.iconGap}>
-          <FontAwesome6 name="facebook-messenger" size={24} color="black" />
+          <Octicons name="diff-added" size={24} color="black" />
           <Ionicons name="person-outline" size={24} color="black" />
           <Ionicons name="search-outline" size={24} color="black" />
         </View>
@@ -39,9 +38,7 @@ export default function Index() {
       </View>
       <View
         style={{ borderBottomWidth: 0.2, borderColor: "rgba(0, 0, 0, 0.2)" }}
-      >
-        {" "}
-      </View>
+      />
 
       {/* Section Head */}
       <View style={styles.sectionHead}>
@@ -138,9 +135,7 @@ export default function Index() {
           borderColor: "rgba(0, 0, 0, 0.7)",
           marginVertical: 10,
         }}
-      >
-        {" "}
-      </View>
+      />
 
       {/* Section Head */}
       <View>
