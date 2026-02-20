@@ -4,6 +4,7 @@ import { useRouter } from "expo-router";
 import React from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { LinearGradient } from "expo-linear-gradient";
 
 //RISHABH
 export default function Index() {
@@ -162,6 +163,18 @@ export default function Index() {
           <Text style={{ color: "#757575" }}>Last 7 days</Text>
         </View>
       </View>
+
+      <LinearGradient
+                colors={["transparent", "rgba(255, 255, 255, 0.9)"]}
+                style={{
+                  position: "absolute",
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  height: 60,
+                }}
+                pointerEvents="none"
+              />
     </SafeAreaView>
   );
 }
