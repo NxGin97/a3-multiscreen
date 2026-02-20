@@ -204,11 +204,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#D3D3D3",
     borderRadius: 25,
   },
-  tabItemSelected: {
-    backgroundColor: "rgba(183, 212, 238, 0.4)",
-    color: "#2b65e0",
-    borderRadius: 18,
-  },
 
   //-----------------------------that tiny spot right underneath the tabs
 
@@ -303,10 +298,4 @@ buttonText: {
     textAlign: "left",
   },
 
-  image: {
-    width: "100%",
-    aspectRatio: 1,
-    borderColor: "rgba(168, 164, 155, 0.5)",
-    borderWidth: 0.5,
-  },
 });
